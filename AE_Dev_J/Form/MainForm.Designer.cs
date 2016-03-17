@@ -45,7 +45,7 @@
             this.m_mapControl = new ESRI.ArcGIS.Controls.AxMapControl();
             this.m_toolbarControl = new ESRI.ArcGIS.Controls.AxToolbarControl();
             this.m_progressBarControl = new DevExpress.XtraEditors.ProgressBarControl();
-            this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.ribbonMenu = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.iNewProject = new DevExpress.XtraBars.BarButtonItem();
             this.iOpenProject = new DevExpress.XtraBars.BarButtonItem();
@@ -62,13 +62,13 @@
             this.alignButtonGroup = new DevExpress.XtraBars.BarButtonGroup();
             this.rgbiSkins = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.iAddData = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.iRgbSeg = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.homeRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.fileRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.project_RibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.file_ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.imgProcess_ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.helpRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.skinsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -92,6 +92,7 @@
             this.addData_toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.coordinate_textEdit = new DevExpress.XtraEditors.TextEdit();
+            this.iClassification = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
@@ -102,7 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_mapControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_toolbarControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_progressBarControl.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
@@ -255,7 +256,7 @@
             // 
             this.m_progressBarControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.m_progressBarControl.Location = new System.Drawing.Point(194, 612);
-            this.m_progressBarControl.MenuManager = this.ribbonControl;
+            this.m_progressBarControl.MenuManager = this.ribbonMenu;
             this.m_progressBarControl.Name = "m_progressBarControl";
             this.m_progressBarControl.Properties.ShowTitle = true;
             this.m_progressBarControl.Properties.Step = 100;
@@ -263,14 +264,14 @@
             this.m_progressBarControl.TabIndex = 5;
             this.m_progressBarControl.Visible = false;
             // 
-            // ribbonControl
+            // ribbonMenu
             // 
-            this.ribbonControl.ApplicationButtonDropDownControl = this.appMenu;
-            this.ribbonControl.ApplicationButtonText = null;
-            this.ribbonControl.ExpandCollapseItem.Id = 0;
-            this.ribbonControl.Images = this.ribbonImageCollection;
-            this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl.ExpandCollapseItem,
+            this.ribbonMenu.ApplicationButtonDropDownControl = this.appMenu;
+            this.ribbonMenu.ApplicationButtonText = null;
+            this.ribbonMenu.ExpandCollapseItem.Id = 0;
+            this.ribbonMenu.Images = this.ribbonImageCollection;
+            this.ribbonMenu.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonMenu.ExpandCollapseItem,
             this.iNewProject,
             this.iOpenProject,
             this.iCloseProject,
@@ -285,24 +286,31 @@
             this.rgbiSkins,
             this.iAddData,
             this.barButtonItem1,
-            this.barButtonItem2});
-            this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
-            this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 4;
-            this.ribbonControl.Name = "ribbonControl";
-            this.ribbonControl.PageHeaderItemLinks.Add(this.iAbout);
-            this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.iRgbSeg,
+            this.iClassification});
+            this.ribbonMenu.LargeImages = this.ribbonImageCollectionLarge;
+            this.ribbonMenu.Location = new System.Drawing.Point(0, 0);
+            this.ribbonMenu.MaxItemId = 5;
+            this.ribbonMenu.Name = "ribbonMenu";
+            this.ribbonMenu.PageHeaderItemLinks.Add(this.iAbout);
+            this.ribbonMenu.PageHeaderItemLinks.Add(this.iAbout);
+            this.ribbonMenu.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.homeRibbonPage,
             this.ribbonPage1,
             this.helpRibbonPage});
-            this.ribbonControl.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl.Size = new System.Drawing.Size(961, 145);
-            this.ribbonControl.StatusBar = this.ribbonStatusBar;
-            this.ribbonControl.Toolbar.ItemLinks.Add(this.iNewProject);
-            this.ribbonControl.Toolbar.ItemLinks.Add(this.iOpenProject);
-            this.ribbonControl.Toolbar.ItemLinks.Add(this.iSaveProject);
-            this.ribbonControl.Toolbar.ItemLinks.Add(this.iSaveProjectAs);
-            this.ribbonControl.Toolbar.ItemLinks.Add(this.iHelp);
+            this.ribbonMenu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
+            this.ribbonMenu.Size = new System.Drawing.Size(961, 145);
+            this.ribbonMenu.StatusBar = this.ribbonStatusBar;
+            this.ribbonMenu.Toolbar.ItemLinks.Add(this.iNewProject);
+            this.ribbonMenu.Toolbar.ItemLinks.Add(this.iOpenProject);
+            this.ribbonMenu.Toolbar.ItemLinks.Add(this.iSaveProject);
+            this.ribbonMenu.Toolbar.ItemLinks.Add(this.iSaveProjectAs);
+            this.ribbonMenu.Toolbar.ItemLinks.Add(this.iHelp);
+            this.ribbonMenu.Toolbar.ItemLinks.Add(this.iNewProject);
+            this.ribbonMenu.Toolbar.ItemLinks.Add(this.iOpenProject);
+            this.ribbonMenu.Toolbar.ItemLinks.Add(this.iSaveProject);
+            this.ribbonMenu.Toolbar.ItemLinks.Add(this.iSaveProjectAs);
+            this.ribbonMenu.Toolbar.ItemLinks.Add(this.iHelp);
             // 
             // appMenu
             // 
@@ -315,7 +323,7 @@
             this.appMenu.ItemLinks.Add(this.barButtonItem1);
             this.appMenu.MenuDrawMode = DevExpress.XtraBars.MenuDrawMode.LargeImagesText;
             this.appMenu.Name = "appMenu";
-            this.appMenu.Ribbon = this.ribbonControl;
+            this.appMenu.Ribbon = this.ribbonMenu;
             // 
             // iNewProject
             // 
@@ -478,14 +486,14 @@
             this.iAddData.Name = "iAddData";
             this.iAddData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iAddData_ItemClick);
             // 
-            // barButtonItem2
+            // iRgbSeg
             // 
-            this.barButtonItem2.Caption = "RGB Segmentation";
-            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
-            this.barButtonItem2.Id = 3;
-            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iRgbSeg_ItemClick);
+            this.iRgbSeg.Caption = "RGB Segmentation";
+            this.iRgbSeg.Glyph = ((System.Drawing.Image)(resources.GetObject("iRgbSeg.Glyph")));
+            this.iRgbSeg.Id = 3;
+            this.iRgbSeg.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("iRgbSeg.LargeGlyph")));
+            this.iRgbSeg.Name = "iRgbSeg";
+            this.iRgbSeg.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iRgbSeg_ItemClick);
             // 
             // ribbonImageCollectionLarge
             // 
@@ -504,40 +512,41 @@
             // homeRibbonPage
             // 
             this.homeRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.fileRibbonPageGroup,
-            this.ribbonPageGroup1});
+            this.project_RibbonPageGroup,
+            this.file_ribbonPageGroup});
             this.homeRibbonPage.Name = "homeRibbonPage";
             this.homeRibbonPage.Text = "Home";
             // 
-            // fileRibbonPageGroup
+            // project_RibbonPageGroup
             // 
-            this.fileRibbonPageGroup.ItemLinks.Add(this.iNewProject);
-            this.fileRibbonPageGroup.ItemLinks.Add(this.iOpenProject);
-            this.fileRibbonPageGroup.ItemLinks.Add(this.iCloseProject);
-            this.fileRibbonPageGroup.ItemLinks.Add(this.iFindProject);
-            this.fileRibbonPageGroup.ItemLinks.Add(this.iSaveProject);
-            this.fileRibbonPageGroup.ItemLinks.Add(this.iSaveProjectAs);
-            this.fileRibbonPageGroup.Name = "fileRibbonPageGroup";
-            this.fileRibbonPageGroup.Text = "Project";
+            this.project_RibbonPageGroup.ItemLinks.Add(this.iNewProject);
+            this.project_RibbonPageGroup.ItemLinks.Add(this.iOpenProject);
+            this.project_RibbonPageGroup.ItemLinks.Add(this.iCloseProject);
+            this.project_RibbonPageGroup.ItemLinks.Add(this.iFindProject);
+            this.project_RibbonPageGroup.ItemLinks.Add(this.iSaveProject);
+            this.project_RibbonPageGroup.ItemLinks.Add(this.iSaveProjectAs);
+            this.project_RibbonPageGroup.Name = "project_RibbonPageGroup";
+            this.project_RibbonPageGroup.Text = "Project";
             // 
-            // ribbonPageGroup1
+            // file_ribbonPageGroup
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.iAddData);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "File";
+            this.file_ribbonPageGroup.ItemLinks.Add(this.iAddData);
+            this.file_ribbonPageGroup.Name = "file_ribbonPageGroup";
+            this.file_ribbonPageGroup.Text = "File";
             // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
+            this.imgProcess_ribbonPageGroup});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Process";
             // 
-            // ribbonPageGroup2
+            // imgProcess_ribbonPageGroup
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Image Process";
+            this.imgProcess_ribbonPageGroup.ItemLinks.Add(this.iRgbSeg);
+            this.imgProcess_ribbonPageGroup.ItemLinks.Add(this.iClassification);
+            this.imgProcess_ribbonPageGroup.Name = "imgProcess_ribbonPageGroup";
+            this.imgProcess_ribbonPageGroup.Text = "Image Process";
             // 
             // helpRibbonPage
             // 
@@ -567,7 +576,7 @@
             this.ribbonStatusBar.ItemLinks.Add(this.siInfo);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 606);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbonControl;
+            this.ribbonStatusBar.Ribbon = this.ribbonMenu;
             this.ribbonStatusBar.Size = new System.Drawing.Size(961, 27);
             // 
             // galleryImageCollection
@@ -597,7 +606,7 @@
             this.popupControlContainer2.Controls.Add(this.buttonEdit);
             this.popupControlContainer2.Location = new System.Drawing.Point(238, 289);
             this.popupControlContainer2.Name = "popupControlContainer2";
-            this.popupControlContainer2.Ribbon = this.ribbonControl;
+            this.popupControlContainer2.Ribbon = this.ribbonMenu;
             this.popupControlContainer2.Size = new System.Drawing.Size(118, 28);
             this.popupControlContainer2.TabIndex = 3;
             this.popupControlContainer2.Visible = false;
@@ -606,7 +615,7 @@
             // 
             this.buttonEdit.EditValue = "Some Text";
             this.buttonEdit.Location = new System.Drawing.Point(3, 5);
-            this.buttonEdit.MenuManager = this.ribbonControl;
+            this.buttonEdit.MenuManager = this.ribbonMenu;
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
@@ -622,7 +631,7 @@
             this.popupControlContainer1.Controls.Add(this.someLabelControl1);
             this.popupControlContainer1.Location = new System.Drawing.Point(111, 197);
             this.popupControlContainer1.Name = "popupControlContainer1";
-            this.popupControlContainer1.Ribbon = this.ribbonControl;
+            this.popupControlContainer1.Ribbon = this.ribbonMenu;
             this.popupControlContainer1.Size = new System.Drawing.Size(76, 70);
             this.popupControlContainer1.TabIndex = 2;
             this.popupControlContainer1.Visible = false;
@@ -739,10 +748,19 @@
             // 
             this.coordinate_textEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.coordinate_textEdit.Location = new System.Drawing.Point(640, 610);
-            this.coordinate_textEdit.MenuManager = this.ribbonControl;
+            this.coordinate_textEdit.MenuManager = this.ribbonMenu;
             this.coordinate_textEdit.Name = "coordinate_textEdit";
             this.coordinate_textEdit.Size = new System.Drawing.Size(315, 20);
             this.coordinate_textEdit.TabIndex = 6;
+            // 
+            // iClassification
+            // 
+            this.iClassification.Caption = "Classification";
+            this.iClassification.Glyph = ((System.Drawing.Image)(resources.GetObject("iClassification.Glyph")));
+            this.iClassification.Id = 4;
+            this.iClassification.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("iClassification.LargeGlyph")));
+            this.iClassification.Name = "iClassification";
+            this.iClassification.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iClassification_ItemClick);
             // 
             // MainForm
             // 
@@ -753,7 +771,7 @@
             this.Controls.Add(this.m_progressBarControl);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.splitContainerControl);
-            this.Controls.Add(this.ribbonControl);
+            this.Controls.Add(this.ribbonMenu);
             this.Controls.Add(this.popupControlContainer1);
             this.Controls.Add(this.popupControlContainer2);
             this.Controls.Add(this.ribbonStatusBar);
@@ -769,7 +787,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.m_mapControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_toolbarControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_progressBarControl.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
@@ -792,7 +810,7 @@
         #endregion
 
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl;
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonMenu;
         private DevExpress.XtraBars.BarButtonItem iNewProject;
         private DevExpress.XtraBars.BarButtonItem iOpenProject;
         private DevExpress.XtraBars.BarButtonItem iCloseProject;
@@ -806,7 +824,7 @@
         private DevExpress.XtraBars.BarButtonGroup alignButtonGroup;
         private DevExpress.XtraBars.RibbonGalleryBarItem rgbiSkins;
         private DevExpress.XtraBars.Ribbon.RibbonPage homeRibbonPage;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup fileRibbonPageGroup;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup project_RibbonPageGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup skinsRibbonPageGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPage helpRibbonPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup helpRibbonPageGroup;
@@ -833,7 +851,7 @@
         private ESRI.ArcGIS.Controls.AxMapControl m_mapControl;
         private ESRI.ArcGIS.Controls.AxToolbarControl m_toolbarControl;
         private DevExpress.XtraBars.BarButtonItem iAddData;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup file_ribbonPageGroup;
         private System.Windows.Forms.ContextMenuStrip tocControlLayer_ContextMenu;
         private System.Windows.Forms.ToolStripMenuItem openAttTable_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeLayer_ToolStripMenuItem;
@@ -850,9 +868,10 @@
         private DevExpress.XtraEditors.ProgressBarControl m_progressBarControl;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit coordinate_textEdit;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem iRgbSeg;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup imgProcess_ribbonPageGroup;
+        private DevExpress.XtraBars.BarButtonItem iClassification;
 
     }
 }

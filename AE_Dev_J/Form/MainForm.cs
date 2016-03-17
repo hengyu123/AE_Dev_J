@@ -156,7 +156,17 @@ namespace AE_Dev_J
             RgbSegForm rgbForm = new RgbSegForm();
             rgbForm.Show();
         }
-        
+
+        /// <summary>
+        /// 分类，点击弹出分类面板
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void iClassification_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ClassificationForm classForm = new ClassificationForm();
+            classForm.Show();
+        }
         #endregion
 
         #region m_tocControl右键菜单项
@@ -412,6 +422,8 @@ namespace AE_Dev_J
             m_mapControl.AddLayer(pLayer);
             m_mapControl.Refresh();
         }
+
+
 
     }
 }
