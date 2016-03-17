@@ -55,3 +55,4 @@ E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\AE_Dev_J.MainForm.resources
 E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\AE_Dev_J.Properties.Resources.resources
 E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\AE_Dev_J.csproj.GenerateResource.Cache
 E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\DXApplication2.exe.licenses
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\AE_Dev_J.Form.ClassificationForm.resources
