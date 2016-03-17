@@ -38,3 +38,20 @@ C:\Users\Administrator\Documents\Visual Studio 2010\Projects\AE_Dev_J\AE_Dev_J\b
 C:\Users\Administrator\Documents\Visual Studio 2010\Projects\AE_Dev_J\AE_Dev_J\bin\Debug\DXApplication2.pdb
 C:\Users\Administrator\Documents\Visual Studio 2010\Projects\AE_Dev_J\AE_Dev_J\bin\Debug\AxInterop.esriControls.dll
 C:\Users\Administrator\Documents\Visual Studio 2010\Projects\AE_Dev_J\AE_Dev_J\obj\Debug\AE_Dev_J.MainForm.resources
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\Interop.COM_IDL_connectLib.dll
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\Interop.GridTableCtrls.dll
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\Interop.UICONTROLSLib.dll
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\AxInterop.esriControls.dll
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\AE_Dev_J.csproj.ResolveComReference.cache
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\DXApplication2.exe
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\DXApplication2.pdb
+E:\Jacory\AE_Dev_J\AE_Dev_J\bin\Debug\DXApplication2.exe
+E:\Jacory\AE_Dev_J\AE_Dev_J\bin\Debug\DXApplication2.pdb
+E:\Jacory\AE_Dev_J\AE_Dev_J\bin\Debug\AxInterop.esriControls.dll
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\AE_Dev_J.csprojResolveAssemblyReference.cache
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\AE_Dev_J.Form.AttributeTableForm.resources
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\AE_Dev_J.RgbSegForm.resources
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\AE_Dev_J.MainForm.resources
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\AE_Dev_J.Properties.Resources.resources
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\AE_Dev_J.csproj.GenerateResource.Cache
+E:\Jacory\AE_Dev_J\AE_Dev_J\obj\Debug\DXApplication2.exe.licenses

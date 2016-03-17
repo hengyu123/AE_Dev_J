@@ -316,15 +316,16 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAyQEAAAIB
-        AAAAAQAAAAAAAAAAAAAAALQBAAAPAAAAAgAAAAEAAAAKAAAAAAAAAACnTgAA5QIAAAAAAAAaAAAAbQBf
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAFwIAAAIB
+        AAAAAQAAAAAAAAAAAAAAAAICAAAPAAAAAgAAAAEAAAAKAAAAAAAAAACnTgAA5QIAAAAAAAAaAAAAbQBf
         AG0AYQBwAEMAbwBuAHQAcgBvAGwAAAD///QBAAAAAAAAAAABAAAAAAAA/////wAAAAANAAAAAAAAAAAA
-        AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAcAAAD//wAAAAABAAGue8zOPwMaQ6W7Uf/Y+6PvAAAAAAAA
+        AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAkAAAD//wAAAAABAAGue8zOPwMaQ6W7Uf/Y+6PvAAAAAAAA
         AAAAAAEAAAD//wAAAAABAAHLPcZTBFujRoZTfPgl/ZRaAAAAAAAAAAAAAAEAAAD//wAAAAABAAE0vAhn
         CzjKQ4MMgmUi4IJpAAAAAAAAAAAAAAEAAAD//wAAAAABAAG4R1hx30R1SplJTt3E1DGNAAAAAAAAAAAA
         AAEAAAD//wAAAAABAAGMFAn72KuBSpShgopGo6rlAAAAAAAAAAAAAAEAAAD//wAAAAABAAGOXSazr2ld
         SZWZPuCOjWtkAAAAAAAAAAAAAAEAAAD//wAAAAABAAF5xgCxxXYNQbyNrp54gqgPAAAAAAAAAAAAAAEA
-        AAAAAAAADwAAgAAAAAAAAA8AAIAAAAAAAAAAABAAAAAQAAAACw==
+        AAD//wAAAAABAAFecqrf1OhhT5e05WA3gzfqAAAAAAAAAAAAAAEAAAD//wAAAAABAAEBcCGqt+khTKek
+        N1FgMiiHAAAAAAAAAAAAAAEAAAAAAAAADwAAgAAAAAAAAA8AAIAAAAAAAAAAABAAAAAQAAAACw==
 </value>
   </data>
   <metadata name="appMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -8333,10 +8334,10 @@
     <value>214, 61</value>
   </metadata>
   <metadata name="mapControl_contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>568, 56</value>
+    <value>447, 60</value>
   </metadata>
   <metadata name="tocControl_contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>802, 56</value>
+    <value>675, 61</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>105</value>

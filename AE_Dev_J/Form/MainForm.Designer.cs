@@ -62,10 +62,13 @@
             this.alignButtonGroup = new DevExpress.XtraBars.BarButtonGroup();
             this.rgbiSkins = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.iAddData = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.homeRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.fileRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.helpRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.skinsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -89,9 +92,6 @@
             this.addData_toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.coordinate_textEdit = new DevExpress.XtraEditors.TextEdit();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axLicenseControl1)).BeginInit();
@@ -239,6 +239,7 @@
             this.m_mapControl.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("m_mapControl.OcxState")));
             this.m_mapControl.Size = new System.Drawing.Size(761, 421);
             this.m_mapControl.TabIndex = 0;
+            this.m_mapControl.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.m_mapControl_OnMouseDown);
             this.m_mapControl.OnMouseMove += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseMoveEventHandler(this.m_mapControl_OnMouseMove);
             // 
             // m_toolbarControl
@@ -477,6 +478,15 @@
             this.iAddData.Name = "iAddData";
             this.iAddData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iAddData_ItemClick);
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "RGB Segmentation";
+            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
+            this.barButtonItem2.Id = 3;
+            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iRgbSeg_ItemClick);
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -515,6 +525,19 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.iAddData);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "File";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup2});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "Process";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Image Process";
             // 
             // helpRibbonPage
             // 
@@ -720,28 +743,6 @@
             this.coordinate_textEdit.Name = "coordinate_textEdit";
             this.coordinate_textEdit.Size = new System.Drawing.Size(315, 20);
             this.coordinate_textEdit.TabIndex = 6;
-            // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Process";
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Image Process";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "RGB Segmentation";
-            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
-            this.barButtonItem2.Id = 3;
-            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iRgbSeg_ItemClick);
             // 
             // MainForm
             // 
