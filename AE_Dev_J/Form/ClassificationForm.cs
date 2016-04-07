@@ -60,5 +60,9 @@ namespace AE_Dev_J.Form
         {
         }
 
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
