@@ -19,6 +19,9 @@ using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.CartoUI;
 using AE_Dev_J.Form;
 using ESRI.ArcGIS.Display;
+using ESRI.ArcGIS.SystemUI;
+
+
 
 
 namespace AE_Dev_J
@@ -60,17 +63,9 @@ namespace AE_Dev_J
         /// <param name="e"></param>
         private void iOpenProject_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            OpenFileDialog openDialog = new OpenFileDialog();
-            
-            openDialog.Title = "打开工程";
-            openDialog.Filter = "project files(*.mxd)|*.mxd";
-            openDialog.Multiselect = false;
-
-            if (openDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filename = openDialog.FileName;
-                m_mapControl.LoadMxFile(filename);
-            }         
+            ESRI.ArcGIS.SystemUI.ICommand openProjectCommand = new ControlsOpenDocCommand();
+            openProjectCommand.OnCreate(m_mapControl.Object);
+            openProjectCommand.OnClick();
         }
 
         /// <summary>
@@ -80,7 +75,7 @@ namespace AE_Dev_J
         /// <param name="e"></param>
         private void iCloseProject_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
         }
 
         /// <summary>
@@ -90,7 +85,19 @@ namespace AE_Dev_J
         /// <param name="e"></param>
         private void iSaveProject_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
+        }
+
+        /// <summary>
+        /// 工程另存为
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void iSaveProjectAs_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ESRI.ArcGIS.SystemUI.ICommand saveCommand = new ControlsSaveAsDocCommand();
+            saveCommand.OnCreate(m_mapControl.Object);
+            saveCommand.OnClick();
         }
 
         /// <summary>
@@ -100,7 +107,7 @@ namespace AE_Dev_J
         /// <param name="e"></param>
         private void iNewProject_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
         }
 
         // ====== File ======
@@ -142,9 +149,9 @@ namespace AE_Dev_J
                 } // end for
             } // end if
         }
-        
+
         #endregion
-        
+
         #region Process 菜单事件
         /// <summary>
         /// RGB自动分割
@@ -167,6 +174,7 @@ namespace AE_Dev_J
             ClassificationForm classForm = new ClassificationForm();
             classForm.Show();
         }
+        
         #endregion
 
         #region m_tocControl右键菜单项
@@ -183,7 +191,7 @@ namespace AE_Dev_J
             object data = null;
             esriTOCControlItem item = esriTOCControlItem.esriTOCControlItemNone;
             m_tocControl.GetSelectedItem(ref item, ref map, ref layer, ref unk, ref data);
-            
+
             IFeatureLayer selectedLayer = layer as IFeatureLayer;
             if (item == esriTOCControlItem.esriTOCControlItemLayer && selectedLayer != null)
             {
@@ -228,11 +236,11 @@ namespace AE_Dev_J
             object data = null;
             esriTOCControlItem item = esriTOCControlItem.esriTOCControlItemNone;
             m_tocControl.GetSelectedItem(ref item, ref map, ref selectedLayer, ref unk, ref data);
-            
+
             if (item == esriTOCControlItem.esriTOCControlItemLayer)
             {
                 m_mapControl.ActiveView.Extent = selectedLayer.AreaOfInterest;
-                m_mapControl.ActiveView.Refresh();                
+                m_mapControl.ActiveView.Refresh();
             }
         }
         #endregion
@@ -280,7 +288,7 @@ namespace AE_Dev_J
         /// <param name="e"></param>
         private void indentify_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         /// <summary>
@@ -323,9 +331,10 @@ namespace AE_Dev_J
         private void m_mapControl_OnMouseMove(object sender, IMapControlEvents2_OnMouseMoveEvent e)
         {
             if (m_mapControl.Map.LayerCount == 0) return;
+
+            // 当前鼠标指针坐标显示
             double x = double.Parse(e.mapX.ToString("0.000"));
             double y = double.Parse(e.mapY.ToString("0.000"));
-
             this.coordinate_textEdit.Text = x.ToString() + ", " + y.ToString();
         }
 
@@ -336,9 +345,17 @@ namespace AE_Dev_J
         /// <param name="e"></param>
         private void m_mapControl_OnMouseDown(object sender, IMapControlEvents2_OnMouseDownEvent e)
         {
-            if (e.button == 2)
+            switch (e.button)
             {
-                mapControl_contextMenuStrip.Show(m_mapControl, new Point(e.x, e.y));
+                case 1:     // 鼠标左键
+                    break;
+                case 2:     // 鼠标右键     
+                    mapControl_contextMenuStrip.Show(m_mapControl, new Point(e.x, e.y));
+                    break;
+                case 3:
+                    break;
+                case 4:     // 鼠标中键
+                    break;
             }
         }
 
@@ -356,7 +373,7 @@ namespace AE_Dev_J
             IMap map = activeView.FocusMap;
             IdentifyDialog idenfityDialog = new IdentifyDialog();
             idenfityDialog.Map = map;
-            
+
             // clear the dialog on each mouse click
             idenfityDialog.ClearLayers();
             IScreenDisplay screenDisplay = activeView.ScreenDisplay;
@@ -368,9 +385,9 @@ namespace AE_Dev_J
             IEnumLayer enumLayer = map.Layers;
             enumLayer.Reset();
             ILayer layer = enumLayer.Next();
-            while(layer!=null)
+            while (layer != null)
             {
-                idenfityDialog.AddLayerIdentifyPoint(layer,x,y);
+                idenfityDialog.AddLayerIdentifyPoint(layer, x, y);
                 layer = enumLayer.Next();
             }
             idenfityDialog.Show();
@@ -422,6 +439,8 @@ namespace AE_Dev_J
             m_mapControl.AddLayer(pLayer);
             m_mapControl.Refresh();
         }
+
+
 
 
 
