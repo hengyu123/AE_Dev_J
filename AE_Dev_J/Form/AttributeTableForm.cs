@@ -33,6 +33,7 @@ namespace AE_Dev_J.Form
             this.Text = m_layer.Name + " Attribute Table: " +
                 m_layer.FeatureClass.FeatureCount(new ESRI.ArcGIS.Geodatabase.QueryFilter()).ToString() + 
                 " features";
+            // tian
         }
 
 
