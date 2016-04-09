@@ -94,11 +94,11 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.coordinate_textEdit = new DevExpress.XtraEditors.TextEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -662,7 +662,7 @@
             // 
             this.someLabelControl2.Location = new System.Drawing.Point(3, 57);
             this.someLabelControl2.Name = "someLabelControl2";
-            this.someLabelControl2.Size = new System.Drawing.Size(56, 14);
+            this.someLabelControl2.Size = new System.Drawing.Size(57, 14);
             this.someLabelControl2.TabIndex = 0;
             this.someLabelControl2.Text = "Some Info";
             // 
@@ -670,7 +670,7 @@
             // 
             this.someLabelControl1.Location = new System.Drawing.Point(3, 3);
             this.someLabelControl1.Name = "someLabelControl1";
-            this.someLabelControl1.Size = new System.Drawing.Size(56, 14);
+            this.someLabelControl1.Size = new System.Drawing.Size(57, 14);
             this.someLabelControl1.TabIndex = 0;
             this.someLabelControl1.Text = "Some Info";
             // 
@@ -762,7 +762,7 @@
             this.labelControl1.LineColor = System.Drawing.Color.Transparent;
             this.labelControl1.Location = new System.Drawing.Point(569, 784);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(65, 14);
+            this.labelControl1.Size = new System.Drawing.Size(66, 14);
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "coordinate :";
             // 
@@ -793,6 +793,18 @@
             this.barManager1.MaxItemId = 5;
             this.barManager1.StatusBar = this.bar3;
             // 
+            // bar3
+            // 
+            this.bar3.BarName = "Status bar";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Status bar";
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -820,17 +832,6 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(961, 0);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 610);
-            // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
             // 
             // barButtonItem2
             // 
