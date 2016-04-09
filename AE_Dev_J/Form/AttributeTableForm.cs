@@ -68,7 +68,7 @@ namespace AE_Dev_J.Form
             //worksheet.Columns.AutoFit(0, m_featureclass.Fields.FieldCount-1);
             //spreadsheetControl1.EndUpdate();
         }
-        private void appendForm(IFeatureLayer layer,MainForm mainform)
+        public void appendTable(IFeatureLayer layer)
         {
 
         }

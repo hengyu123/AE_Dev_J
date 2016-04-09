@@ -245,7 +245,7 @@ namespace AE_Dev_J
                     if (m_attForm == null || m_attForm.IsDisposed == true)
                         m_attForm = new AttributeTableForm(selectedLayer, this);
                     else
-                        attForm.appendTable(selectedLayer, this);
+                        m_attForm.appendTable(selectedLayer);
                     m_attForm.Show();
                     m_attForm.Focus();
                 }
