@@ -22,14 +22,23 @@ using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.SystemUI;
 
 
-
-
 namespace AE_Dev_J
 {
     public partial class MainForm : XtraForm
     {
         public AxTOCControl getTocControl() { return m_tocControl; }
         public AxMapControl getMapControl() { return m_mapControl; }
+
+        #region 私有成员变量
+
+        // 为了保留单一实例，存储一些对话框引用
+        private ClassificationForm m_classForm = null;
+        private AboutForm m_abForm = null;
+        private TargetDetectionForm m_tdForm = null;
+        private RgbSegForm m_rgbSegForm = null;
+        private AttributeTableForm m_attForm = null;
+
+        #endregion 私有成员变量
 
         public MainForm()
         {
@@ -160,8 +169,12 @@ namespace AE_Dev_J
         /// <param name="e"></param>
         private void iRgbSeg_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            RgbSegForm rgbForm = new RgbSegForm();
-            rgbForm.Show();
+            if (m_rgbSegForm == null || m_rgbSegForm.IsDisposed == true)
+            {
+                m_rgbSegForm = new RgbSegForm(); 
+            }
+            m_rgbSegForm.Show();
+            m_rgbSegForm.Focus();
         }
 
         /// <summary>
@@ -171,11 +184,43 @@ namespace AE_Dev_J
         /// <param name="e"></param>
         private void iClassification_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ClassificationForm classForm = new ClassificationForm();
-            classForm.Show();
+            if(m_classForm == null || m_classForm.IsDisposed==true)
+                m_classForm = new ClassificationForm();
+            m_classForm.Show();
+            m_classForm.Focus();
         }
-        
+
+        /// <summary>
+        /// 目标探测，点击弹出目标探测面板
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void iTargetDetection_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (m_tdForm == null || m_tdForm.IsDisposed == true)
+                m_tdForm = new TargetDetectionForm();
+            m_tdForm.Show();
+            m_tdForm.Focus();
+        }
+
         #endregion
+
+        #region Home and Skin
+
+        /// <summary>
+        /// “关于”对话框
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void iAbout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (m_abForm == null || m_abForm.IsDisposed == true)
+                m_abForm = new AboutForm();
+            m_abForm.Show();
+            m_abForm.Focus();
+        }
+
+        #endregion Home and Skin
 
         #region m_tocControl右键菜单项
         /// <summary>
@@ -196,9 +241,13 @@ namespace AE_Dev_J
             if (item == esriTOCControlItem.esriTOCControlItemLayer && selectedLayer != null)
             {
                 if (selectedLayer.DataSourceType == "Shapefile Feature Class")
-                {   // 打开属性表窗口
-                    AttributeTableForm attForm = new AttributeTableForm(selectedLayer, this);
-                    attForm.Show();
+                {   // 打开属性表窗口，如果当前没有属性表，就创建一个，如果当前有，就在原有窗口中添加一张表格
+                    if (m_attForm == null || m_attForm.IsDisposed == true)
+                        m_attForm = new AttributeTableForm(selectedLayer, this);
+                    else
+                        attForm.appendTable(selectedLayer, this);
+                    m_attForm.Show();
+                    m_attForm.Focus();
                 }
             }
         }
@@ -335,7 +384,8 @@ namespace AE_Dev_J
             // 当前鼠标指针坐标显示
             double x = double.Parse(e.mapX.ToString("0.000"));
             double y = double.Parse(e.mapY.ToString("0.000"));
-            this.coordinate_textEdit.Text = x.ToString() + ", " + y.ToString();
+            this.coordinate_textEdit.EditValue = x.ToString() + ", " + y.ToString();
+            
         }
 
         /// <summary>
@@ -439,10 +489,6 @@ namespace AE_Dev_J
             m_mapControl.AddLayer(pLayer);
             m_mapControl.Refresh();
         }
-
-
-
-
 
     }
 }
