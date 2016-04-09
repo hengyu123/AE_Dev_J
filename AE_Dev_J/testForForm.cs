@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
+using ESRI.ArcGIS.Carto;
 
 namespace AE_Dev_J
 {
@@ -20,11 +21,9 @@ namespace AE_Dev_J
             DevExpress.UserSkins.BonusSkins.Register();
             UserLookAndFeel.Default.SetSkinStyle("Office 2013");
 
-            AE_Dev_J.Form.ClassificationForm classform = new Form.ClassificationForm();
-            classform.Show();
-
-            Application.Run();
-            
+            //AE_Dev_J.Form.ClassificationForm classform = new Form.ClassificationForm();
+            //classform.Show();
+            Application.Run(new MainForm());
         }
     }
 }
